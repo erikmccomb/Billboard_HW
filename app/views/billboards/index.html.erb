@@ -1,0 +1,13 @@
+<h1>Click a Chart To View the top songs!</h1>
+
+<ul>
+  <% @billboards.each do |billboard| %>
+    <li><%= link_to billboard.name, billboard %></li>
+    <%= link_to "View", billboard %>
+    <%= link_to "Edit", edit_billboard_path(billboard) %>
+    <%= link_to "Delete", billboard_path(billboard), method: :delete %>
+  <% end %>
+</ul>
+<hr/>
+<%= link_to 'Create a new chart', new_billboard_path %>
+<%= link_to "Artists", artists_path%>
